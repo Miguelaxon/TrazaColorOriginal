@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">TrazaColor</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="cantidadProducto">0</string>
+    <string name="carrito_fragment_label">Carrito Compras Fragment</string>
+    <string name="material">El material es %1$s</string>
+    <string name="dimensionChica">Tamaño S - %1$s</string>
+    <string name="dimensionMediana">Tamaño M - %1$s</string>
+    <string name="dimensionGrande">Tamaño L - %1$s</string>
+    <string name="dimensionXL">Tamaño XL - %1$s</string>
+    <string name="cantidad">Cantidad: %1$s</string>
+    <string name="precio">Precio: %1$s</string>
+    <string name="btnMenos">-</string>
+    <string name="btnMas">+</string>
+    <string name="cantidadDefault">1</string>
+    <string name="ver_carrito">Ver Carrito</string>
+    <string name="carritoProductos">%1$s</string>
+    <string name="carritoPrecio">%1$s</string>
+    <string name="carro_de_compras">Carro de Compras</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="totalCarrito"> El total de la compra es: %1$s</string>
+    <string name="btn_agregar">Agregar</string>
+</resources>

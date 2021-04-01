@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.trazacolor.ui.MainActivity">
+    <item
+        android:id="@+id/action_carritoCompras"
+        android:icon="@drawable/ic_carrito_de_compras"
+        android:title="@string/ver_carrito"
+        app:showAsAction="ifRoom" />
+</menu>
