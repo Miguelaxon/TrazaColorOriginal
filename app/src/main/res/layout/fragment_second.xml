@@ -127,17 +127,6 @@
         app:layout_constraintStart_toEndOf="@+id/tvCantidadProducto"
         app:layout_constraintTop_toBottomOf="@+id/tvPrecioS" />
 
-    <ImageButton
-        android:id="@+id/ibAgregarCarrito"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="80dp"
-        android:backgroundTint="@color/white"
-        android:src="@drawable/ic_anadir_al_carrito"
-        app:layout_constraintBottom_toTopOf="@+id/tvCantidadProducto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPrecioS" />
-
     <Button
         android:id="@+id/btnAgregarCarrito"
         android:layout_width="wrap_content"

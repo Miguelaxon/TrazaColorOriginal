@@ -1,5 +1,6 @@
 package com.example.trazacolor.ui.adapter
 
+import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -35,6 +36,9 @@ class Adapter: RecyclerView.Adapter<Adapter.ViewHolderTrazaColor>() {
                     .load(item.urlImage).placeholder(R.drawable.ic_pregunta)
                     .into(binding.ivPortada)
             binding.tvName.text = item.name
+            if (item.category == "Individuales") binding.cvList.setCardBackgroundColor(Color.GRAY)
+            if (item.category == "Bolsas") binding.cvList.setCardBackgroundColor(Color.BLUE)
+            if (item.category == "Dye and Bee") binding.cvList.setCardBackgroundColor(Color.CYAN)
             itemView.setOnClickListener(this)
         }
     }

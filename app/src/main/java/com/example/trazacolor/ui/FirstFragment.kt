@@ -1,13 +1,13 @@
 package com.example.trazacolor.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.trazacolor.R
 import com.example.trazacolor.databinding.FragmentFirstBinding
 import com.example.trazacolor.ui.adapter.Adapter
@@ -16,9 +16,10 @@ import com.example.trazacolor.viewmodel.ViewModel
 class FirstFragment : Fragment() {
     private lateinit var binding: FragmentFirstBinding
     private val viewModel: ViewModel by activityViewModels()
+    val bundle = Bundle()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?): View? {
         binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -38,7 +39,6 @@ class FirstFragment : Fragment() {
 
         adapter.selected().observe(viewLifecycleOwner, {
             it?.let {
-                val bundle = Bundle()
                 bundle.putInt("id", it.id)
                 bundle.putString("categoria", it.category)
                 viewModel.listAll
@@ -46,7 +46,7 @@ class FirstFragment : Fragment() {
             }
         })
     }
-
+/*
     override fun onCreate(savedInstanceState: Bundle?) {
         setHasOptionsMenu(true)
         super.onCreate(savedInstanceState)
@@ -61,7 +61,13 @@ class FirstFragment : Fragment() {
         when (item.itemId) {
             R.id.action_carritoCompras ->
                 findNavController().navigate(R.id.action_FirstFragment_to_carritoComprasFragment)
+            R.id.action_exit -> {
+                Toast.makeText(context, "Gracias por su visita.", Toast.LENGTH_SHORT).show()
+                activity?.finish()
+            }
         }
         return super.onOptionsItemSelected(item)
     }
+
+ */
 }

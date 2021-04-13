@@ -1,22 +1,21 @@
 package com.example.trazacolor.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
+import android.widget.Button
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.trazacolor.R
 import com.example.trazacolor.databinding.FragmentCarritoComprasBinding
-import com.example.trazacolor.local.Item
 import com.example.trazacolor.ui.adapter.AdapterCarrito
 import com.example.trazacolor.viewmodel.ViewModel
 import java.text.DecimalFormat
 
-class CarritoComprasFragment : Fragment() {
+class CarritoFragment : Fragment() {
+
     private lateinit var binding: FragmentCarritoComprasBinding
     private val viewModel: ViewModel by activityViewModels()
     var total: Int = 0

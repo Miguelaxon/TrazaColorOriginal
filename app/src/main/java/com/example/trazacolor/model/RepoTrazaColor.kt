@@ -14,7 +14,7 @@ class RepoTrazaColor(private val iDao: IDao) {
             list.add(Item(id = it.id, name = it.name, amount = it.amount, material = it.material,
                     small = it.small, medium = it.medium, big = it.big, xl = it.xl, price = it.price,
                     urlImage = it.urlImage, category = it.category, carrito = false,
-                    cantTotal = it.cantTotal))
+                    cantTotal = it.cantTotal, total = it.total))
         }
         return list
     }

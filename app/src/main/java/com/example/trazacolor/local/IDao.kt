@@ -5,7 +5,7 @@ import androidx.room.*
 
 @Dao
 interface IDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertAll(list: List<Item>)
 
     @Query("SELECT * FROM table_master")
@@ -13,6 +13,9 @@ interface IDao {
 
     @Query("SELECT * FROM table_master WHERE carrito = 1")
     fun getCarrito(): LiveData<List<Item>>
+
+    @Query("SELECT * FROM table_master WHERE carrito = 1")
+    fun getTotalCarrito(): LiveData<Item>
 
     @Update
     suspend fun updateCarrito(item: Item)

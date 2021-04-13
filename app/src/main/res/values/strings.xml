@@ -2,10 +2,8 @@
     <string name="app_name">TrazaColor</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="cantidadProducto">0</string>
-    <string name="carrito_fragment_label">Carrito Compras Fragment</string>
     <string name="material">El material es %1$s</string>
     <string name="dimensionChica">Tamaño S - %1$s</string>
     <string name="dimensionMediana">Tamaño M - %1$s</string>
@@ -24,4 +22,8 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="totalCarrito"> El total de la compra es: %1$s</string>
     <string name="btn_agregar">Agregar</string>
+    <string name="menu_atras">Atrás</string>
+    <string name="title_activity_main_carrito">MainCarrito</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
 </resources>

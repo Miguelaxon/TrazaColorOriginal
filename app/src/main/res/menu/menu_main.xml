@@ -1,10 +1,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.trazacolor.ui.MainActivity">
+    tools:context="com.example.trazacolor.ui.FirstFragment">
+
+    <group
+        android:id="@+id/action_group"
+        app:showAsAction="always" >
+        <item
+            android:id="@+id/action_carritoCompras"
+            android:icon="@drawable/ic_anadir_al_carrito"
+            android:title="@string/ver_carrito"
+            app:showAsAction="ifRoom" />
+    </group>
+
     <item
-        android:id="@+id/action_carritoCompras"
-        android:icon="@drawable/ic_carrito_de_compras"
-        android:title="@string/ver_carrito"
-        app:showAsAction="ifRoom" />
+        android:id="@+id/action_exit"
+        android:icon="@drawable/ic_salida"
+        android:title="@string/menu_atras"
+        app:showAsAction="ifRoom"/>
 </menu>

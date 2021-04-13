@@ -1,5 +1,7 @@
 package com.example.trazacolor.ui.adapter
 
+import android.content.Intent
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +14,10 @@ import com.example.trazacolor.R
 import com.example.trazacolor.databinding.ItemCarritoComprasBinding
 import com.example.trazacolor.databinding.ItemTrazaColorBinding
 import com.example.trazacolor.local.Item
+import com.example.trazacolor.local.Total
+import com.example.trazacolor.model.RepoTrazaColor
+import com.example.trazacolor.ui.CarritoComprasFragment
+import com.example.trazacolor.viewmodel.ViewModel
 import java.text.DecimalFormat
 
 class AdapterCarrito: RecyclerView.Adapter<AdapterCarrito.ViewHolderCarrito>() {
@@ -31,9 +37,9 @@ class AdapterCarrito: RecyclerView.Adapter<AdapterCarrito.ViewHolderCarrito>() {
             val formatter = DecimalFormat("$#,###")
             if (item.carrito) {
                 binding.tvProductos.text = item.name
-                binding.tvPrecioCarro.text = formatter.format(item.price)
-                binding.tvCantidadCarro.text = item.cantTotal.toString()
-                //binding.tvSubTotal.text = formatter.format(item.price?.times(item.cantTotal))
+                binding.tvPrecioCarro.text = "Precio:\n" + formatter.format(item.price)
+                binding.tvCantidadCarro.text = "Cantidad:\n\t\t" + item.cantTotal.toString()
+                binding.tvSubTotal.text = "SubTotal: " + formatter.format(item.total)
             }
             itemView.setOnClickListener(this)
         }
