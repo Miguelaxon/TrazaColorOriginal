@@ -34,7 +34,3 @@ data class ClassItem(val id: Int, val name: String, val amount: String, val mate
                      val small: String, val medium: String, val big: String, val xl: String,
                      val price: Int, val urlImage: String, val category: String,
                      var carrito: Boolean, var cantTotal: Int, var total: Int)
-
-class Total {
-    var total: Int = 0
-}

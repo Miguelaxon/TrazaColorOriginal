@@ -23,7 +23,8 @@
     <string name="totalCarrito"> El total de la compra es: %1$s</string>
     <string name="btn_agregar">Agregar</string>
     <string name="menu_atras">Atrás</string>
-    <string name="title_activity_main_carrito">MainCarrito</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="btn_vaciar_carrito">Vaciar Carrito</string>
+    <string name="btn_hacer_pedido">Hacer Pedido</string>
 </resources>

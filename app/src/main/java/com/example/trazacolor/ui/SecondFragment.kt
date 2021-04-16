@@ -1,32 +1,26 @@
 package com.example.trazacolor.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.trazacolor.R
 import com.example.trazacolor.databinding.FragmentSecondBinding
 import com.example.trazacolor.local.Item
-import com.example.trazacolor.local.Total
 import com.example.trazacolor.viewmodel.ViewModel
 import java.text.DecimalFormat
 
 class SecondFragment : Fragment() {
     private lateinit var binding: FragmentSecondBinding
     private val viewModel: ViewModel by activityViewModels()
-    val bundle = Bundle()
     var idS: Int = 0
     var categoria: String = ""
     var cant: Int = 0
-    var total = Total()
     var item: Item? = null
     var subT: Int = 0
-    var contador: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -120,22 +114,4 @@ class SecondFragment : Fragment() {
             }
         }
     }
-/*
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_main, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        bundle.putInt("total", total.total)
-        Log.d("total","${total.total}")
-        when (item.itemId) {
-            R.id.action_carritoCompras ->
-                findNavController().navigate(R.id.action_SecondFragment_to_carritoComprasFragment,
-                        bundle)
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
- */
 }

@@ -14,9 +14,6 @@ interface IDao {
     @Query("SELECT * FROM table_master WHERE carrito = 1")
     fun getCarrito(): LiveData<List<Item>>
 
-    @Query("SELECT * FROM table_master WHERE carrito = 1")
-    fun getTotalCarrito(): LiveData<Item>
-
     @Update
     suspend fun updateCarrito(item: Item)
 }

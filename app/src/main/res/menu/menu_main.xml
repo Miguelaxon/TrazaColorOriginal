@@ -3,15 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.trazacolor.ui.FirstFragment">
 
-    <group
-        android:id="@+id/action_group"
-        app:showAsAction="always" >
-        <item
-            android:id="@+id/action_carritoCompras"
-            android:icon="@drawable/ic_anadir_al_carrito"
-            android:title="@string/ver_carrito"
-            app:showAsAction="ifRoom" />
-    </group>
+    <item
+        android:id="@+id/action_carritoCompras"
+        android:icon="@drawable/ic_anadir_al_carrito"
+        android:title="@string/ver_carrito"
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_exit"

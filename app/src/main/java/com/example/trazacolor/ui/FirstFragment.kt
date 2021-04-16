@@ -46,28 +46,4 @@ class FirstFragment : Fragment() {
             }
         })
     }
-/*
-    override fun onCreate(savedInstanceState: Bundle?) {
-        setHasOptionsMenu(true)
-        super.onCreate(savedInstanceState)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_main, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.action_carritoCompras ->
-                findNavController().navigate(R.id.action_FirstFragment_to_carritoComprasFragment)
-            R.id.action_exit -> {
-                Toast.makeText(context, "Gracias por su visita.", Toast.LENGTH_SHORT).show()
-                activity?.finish()
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
- */
 }
