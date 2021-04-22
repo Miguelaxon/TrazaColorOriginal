@@ -1,8 +1,12 @@
 package com.example.trazacolor.ui
 
+import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
+import androidx.activity.addCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -12,6 +16,7 @@ import com.example.trazacolor.R
 import com.example.trazacolor.databinding.FragmentFirstBinding
 import com.example.trazacolor.ui.adapter.Adapter
 import com.example.trazacolor.viewmodel.ViewModel
+import kotlin.system.exitProcess
 
 class FirstFragment : Fragment() {
     private lateinit var binding: FragmentFirstBinding
@@ -26,10 +31,10 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as AppCompatActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
         val adapter = Adapter()
         binding.rv.adapter = adapter
         binding.rv.layoutManager = GridLayoutManager(context, 1)
-
 
         viewModel.selected().observe(viewLifecycleOwner, {
             it?.let {

@@ -17,22 +17,15 @@ class MainCarrito : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbarCarrito))
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
     }
-/*
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        super.onCreateOptionsMenu(menu)
-        menuInflater.inflate(R.menu.menu_carrito, menu)
-        return true
+
+    override fun onBackPressed() {
+        startActivity(Intent(this, MainActivity::class.java))
     }
-*/
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
-                startActivity(Intent(this, MainActivity::class.java))
-                true
-            }
-            R.id.action_exit -> {
-                Toast.makeText(this, "Gracias por su visita.", Toast.LENGTH_SHORT).show()
-                exitProcess(1)
+                onBackPressed()
                 true
             }
             else -> super.onOptionsItemSelected(item)

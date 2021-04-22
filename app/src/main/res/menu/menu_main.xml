@@ -8,10 +8,9 @@
         android:icon="@drawable/ic_anadir_al_carrito"
         android:title="@string/ver_carrito"
         app:showAsAction="ifRoom" />
-
     <item
         android:id="@+id/action_exit"
         android:icon="@drawable/ic_salida"
-        android:title="@string/menu_atras"
+        android:title="@string/salir"
         app:showAsAction="ifRoom"/>
 </menu>

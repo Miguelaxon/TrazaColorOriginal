@@ -1,8 +1,11 @@
 package com.example.trazacolor.ui.adapter
 
+import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +16,7 @@ import java.text.DecimalFormat
 class AdapterCarrito: RecyclerView.Adapter<AdapterCarrito.ViewHolderCarrito>() {
     private var lista = listOf<Item>()
     private var selected = MutableLiveData<Item>()
+    var total: Int = 0
 
     fun selected(): LiveData<Item> = selected
 
@@ -20,9 +24,11 @@ class AdapterCarrito: RecyclerView.Adapter<AdapterCarrito.ViewHolderCarrito>() {
         lista = list
         notifyDataSetChanged()
     }
-
+    val fragmentB = Fragment()
     inner class ViewHolderCarrito(private val binding: ItemCarritoComprasBinding)
         : RecyclerView.ViewHolder(binding.root), View.OnClickListener {
+
+        val bundle = Bundle()
         fun bind(item: Item) {
             val formatter = DecimalFormat("$#,###")
             if (item.carrito) {
@@ -31,6 +37,45 @@ class AdapterCarrito: RecyclerView.Adapter<AdapterCarrito.ViewHolderCarrito>() {
                 binding.tvCantidadCarro.text = "Cantidad:\n\t\t" + item.cantTotal.toString()
                 binding.tvSubTotal.text = "SubTotal: " + formatter.format(item.total)
             }
+            binding.btn2Mas.setOnClickListener {
+                if (item.cantTotal == 0) {
+                    item.carrito = false
+                    item.cantTotal = 0
+                    item.total = 0
+                } else {
+                    item.cantTotal++
+                    item.total = item.cantTotal * item.price!!
+                    binding.tvCantidadCarro.text = "Cantidad:\n\t\t" + item.cantTotal.toString()
+                    binding.tvSubTotal.text = "SubTotal: " + formatter.format(item.total)
+                    total = lista.sumOf { sum ->
+                        sum.total
+                    }
+                    bundle.putString("total", total.toString())
+                    fragmentB.arguments = bundle
+                    Log.d("total", "$bundle")
+                }
+            }
+            binding.btn2Menos.setOnClickListener {
+                if (item.cantTotal == 0) {
+                    item.carrito = false
+                    item.cantTotal = 0
+                    item.total = 0
+                } else {
+                    item.cantTotal--
+                    item.total = item.cantTotal * item.price!!
+                    binding.tvCantidadCarro.text = "Cantidad:\n\t\t" + item.cantTotal.toString()
+                    binding.tvSubTotal.text = "SubTotal: " + formatter.format(item.total)
+                    total = lista.sumOf { sum ->
+                        sum.total
+                    }
+                    bundle.putString("total", total.toString())
+                    fragmentB.arguments = bundle
+                    Log.d("total1", "$bundle")
+                }
+            }
+
+            //binding.tvCantidadCarro.text = "Cantidad:\n\t\t" + item.cantTotal.toString()
+            binding.tvSubTotal.text = "SubTotal: " + formatter.format(item.total)
             itemView.setOnClickListener(this)
         }
 

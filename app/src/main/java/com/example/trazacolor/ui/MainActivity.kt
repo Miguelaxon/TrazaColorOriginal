@@ -2,12 +2,13 @@ package com.example.trazacolor.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.trazacolor.R
-import kotlin.system.exitProcess
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,13 +29,15 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_carritoCompras -> {
-                val intent = Intent(this, MainCarrito::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, MainCarrito::class.java))
+                true
+            }
+            android.R.id.home -> {
+                startActivity(Intent(this, MainActivity::class.java))
                 true
             }
             R.id.action_exit -> {
-                Toast.makeText(this, "Gracias por su visita.", Toast.LENGTH_SHORT).show()
-                finish()
+                finishAffinity()
                 true
             }
             else -> super.onOptionsItemSelected(item)

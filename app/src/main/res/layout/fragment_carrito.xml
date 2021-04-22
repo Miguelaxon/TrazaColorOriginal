@@ -8,7 +8,7 @@
     tools:context=".ui.CarritoFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv2"
+        android:id="@+id/rvCarrito"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="8dp"
@@ -56,7 +56,7 @@
         android:text="@string/btn_vaciar_carrito"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rv2" />
+        app:layout_constraintTop_toBottomOf="@+id/rvCarrito" />
 
     <Button
         android:id="@+id/btn_Buy"
@@ -68,5 +68,21 @@
         android:text="@string/btn_hacer_pedido"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rv2" />
+        app:layout_constraintTop_toBottomOf="@+id/rvCarrito" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginTop="280dp"
+        android:alpha="0.7"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
