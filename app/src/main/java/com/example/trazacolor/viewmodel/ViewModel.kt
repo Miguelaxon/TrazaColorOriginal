@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.trazacolor.local.BaseDatos
+import com.example.trazacolor.local.CarritoTotal
 import com.example.trazacolor.local.Item
 import com.example.trazacolor.model.RepoTrazaColor
 import kotlinx.coroutines.launch

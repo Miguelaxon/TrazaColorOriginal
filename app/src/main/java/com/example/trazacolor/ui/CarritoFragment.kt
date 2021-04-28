@@ -3,23 +3,20 @@ package com.example.trazacolor.ui
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.text.Html
 import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.trazacolor.R
 import com.example.trazacolor.databinding.FragmentCarritoBinding
 import com.example.trazacolor.local.Item
-import com.example.trazacolor.local.TotalCarro
 import com.example.trazacolor.ui.adapter.AdapterCarrito
 import com.example.trazacolor.viewmodel.ViewModel
 import java.text.DecimalFormat
-import kotlin.system.exitProcess
 
 class CarritoFragment : Fragment() {
 
@@ -65,7 +62,6 @@ class CarritoFragment : Fragment() {
 
             totalTotal = total + totalCarro
             binding.tvTotalCarro.text = getString(R.string.totalCarrito, formatter.format(totalTotal))
-            Log.d("total2", "$totalCarro")
             binding.btnEmpty.setOnClickListener { _ ->
                 if (it.isNotEmpty()) {
                     it.forEach { carr ->
@@ -86,7 +82,8 @@ class CarritoFragment : Fragment() {
     fun showDialog() {
         val dialogBuilder = context?.let { AlertDialog.Builder(it) }
         dialogBuilder?.setTitle("Carrito Vacío")
-        dialogBuilder?.setPositiveButton("Done") { _: DialogInterface, _: Int ->
+        dialogBuilder?.setPositiveButton(Html.fromHtml("<font color='#FF0000'><b>Ok</b><font>"))
+        { _: DialogInterface, _: Int ->
             val intent = Intent(context, MainActivity::class.java)
             startActivity(intent)
         }

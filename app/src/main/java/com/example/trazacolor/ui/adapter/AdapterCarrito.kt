@@ -10,6 +10,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trazacolor.databinding.ItemCarritoComprasBinding
+import com.example.trazacolor.local.CarritoTotal
 import com.example.trazacolor.local.Item
 import java.text.DecimalFormat
 
@@ -24,11 +25,9 @@ class AdapterCarrito: RecyclerView.Adapter<AdapterCarrito.ViewHolderCarrito>() {
         lista = list
         notifyDataSetChanged()
     }
-    val fragmentB = Fragment()
+
     inner class ViewHolderCarrito(private val binding: ItemCarritoComprasBinding)
         : RecyclerView.ViewHolder(binding.root), View.OnClickListener {
-
-        val bundle = Bundle()
         fun bind(item: Item) {
             val formatter = DecimalFormat("$#,###")
             if (item.carrito) {
@@ -50,9 +49,8 @@ class AdapterCarrito: RecyclerView.Adapter<AdapterCarrito.ViewHolderCarrito>() {
                     total = lista.sumOf { sum ->
                         sum.total
                     }
-                    bundle.putString("total", total.toString())
-                    fragmentB.arguments = bundle
-                    Log.d("total", "$bundle")
+                    CarritoTotal(total)
+                    Log.d("total1", "${CarritoTotal(total)}")
                 }
             }
             binding.btn2Menos.setOnClickListener {
@@ -68,12 +66,10 @@ class AdapterCarrito: RecyclerView.Adapter<AdapterCarrito.ViewHolderCarrito>() {
                     total = lista.sumOf { sum ->
                         sum.total
                     }
-                    bundle.putString("total", total.toString())
-                    fragmentB.arguments = bundle
-                    Log.d("total1", "$bundle")
+                    CarritoTotal(total)
+                    Log.d("total2", "${CarritoTotal(total)}")
                 }
             }
-
             //binding.tvCantidadCarro.text = "Cantidad:\n\t\t" + item.cantTotal.toString()
             binding.tvSubTotal.text = "SubTotal: " + formatter.format(item.total)
             itemView.setOnClickListener(this)
